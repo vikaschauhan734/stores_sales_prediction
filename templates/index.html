@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigMart Sales Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BigMart Sales Price Prediction</h1>
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <label for="item_identifier">Item Identifier:</label>
+                <input type="string" id="item_identifier" name="item_identifier" required>
+            </div>
+            <div class="form-group">
+                <label for="item_weight">Item Weight:</label>
+                <input type="string" id="item_weight" name="item_weight" required>
+            </div>
+            <div class="form-group">
+                <label for="item_fat_content">Item Fat Content:</label>
+                <select id="item_fat_content" name="item_fat_content" required>
+                    <option value="Low Fat">Low Fat</option>
+                    <option value="Regular">Regular</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="item_visibility">Item Visibility:</label>
+                <input type="string" id="item_visibility" name="item_visibility" required>
+            </div>
+            <div class="form-group">
+                <label for="item_type">Item Type:</label>
+                <select id="item_type" name="item_type" required>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Soft Drinks">Soft Drinks</option>
+                    <option value="Meat">Meat</option>
+                    <option value="Fruits and Vegetables">Fruits and Vegetables</option>
+                    <option value="Household">Household</option>
+                    <option value="Baking Goods">Baking Goods</option>
+                    <option value="Snack Foods">Snack Foods</option>
+                    <option value="Frozen Foods">Frozen Foods</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Health and Hygiene">Health and Hygiene</option>
+                    <option value="Hard Drinks">Hard Drinks</option>
+                    <option value="Canned">Canned</option>
+                    <option value="Breads">Breads</option>
+                    <option value="Starchy Foods">Starchy Foods</option>
+                    <option value="Others">Others</option>
+                    <option value="Seafood">Seafood</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="item_mrp">Item MRP:</label>
+                <input type="string" id="item_mrp" name="item_mrp" required>
+            </div>
+            <div class="form-group">
+                <label for="outlet_identifer">Outlet Identifier:</label>
+                <select id="outlet_identifer" name="outlet_identifer" required>
+                    <option value="OUT049">OUT049</option>
+                    <option value="OUT018">OUT018</option>
+                    <option value="OUT010">OUT010</option>
+                    <option value="OUT013">OUT013</option>
+                    <option value="OUT027">OUT027</option>
+                    <option value="OUT045">OUT045</option>
+                    <option value="OUT017">OUT017</option>
+                    <option value="OUT046">OUT046</option>
+                    <option value="OUT035">OUT035</option>
+                    <option value="OUT019">OUT019</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="outlet_establishment_year">Outlet Establishment Year:</label>
+                <input type="int" id="outlet_establishment_year" name="outlet_establishment_year" required>
+            </div>
+            <div class="form-group">
+                <label for="outlet_size">Outlet Size:</label>
+                <select id="outlet_size" name="outlet_size" required>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="NaN">No Info</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="outlet_location_type">Outlet Location Type:</label>
+                <select id="outlet_location_type" name="outlet_location_type" required>
+                    <option value="Tier 1">Tier 1</option>
+                    <option value="Tier 2">Tier 2</option>
+                    <option value="Tier 3">Tier 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="outlet_type">Outlet Type:</label>
+                <select id="outlet_type" name="outlet_type" required>
+                    <option value="Supermarket Type1">Supermarket Type1</option>
+                    <option value="Supermarket Type2">Supermarket Type2</option>
+                    <option value="Supermarket Type3">Supermarket Type3</option>
+                    <option value="Grocery Store">Grocery Store</option>
+                </select>
+            </div>
+            <input type="submit" class="submit-button" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
