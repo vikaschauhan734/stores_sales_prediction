@@ -10,10 +10,6 @@ scaler = pickle.load(open('scaler.pkl', 'rb'))
 def home():
     return render_template('index.html')
 
-@app.route('/prediction')
-def predication(prediction):
-    return predication
-
 @app.route('/submit',methods=['POST','GET'])
 def submit():
     if request.method=='POST':
@@ -57,8 +53,8 @@ def submit():
             outlet_size_n = 0
         item_visibility = float(request.form['item_visibility'])
         scaled = scaler.transform(np.array([item_mrp,outlet_identifier_out027,outlet_type_spt3,outlet_identifier_out019,outlet_size_m,outlet_size_n,item_visibility,outlet_type_spt1,outlet_size_s]).reshape(1, -1))
-        prediction = model.predict(scaled)[0]
-    return redirect(url_for('prediction'))
+        prediction = round(model.predict(scaled)[0],2)
+    return render_template('prediction.html',result=prediction)
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0',port=8080)
