@@ -1,4 +1,4 @@
-# Sales Store Prediction Project
+# Stores Sales Prediction
 
 This repository contains a project focused on predicting item outlet sales in a sales store. The project involves exploratory data analysis (EDA), visualization, feature engineering, feature selection, and model training using the GradientBoostingRegressor algorithm.
 
